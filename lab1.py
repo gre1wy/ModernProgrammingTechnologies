@@ -30,10 +30,12 @@ class TestPowerFunction(unittest.TestCase):
             power(0, 3)
 
         with self.assertRaises(ValueError):
-            power(-2, 4)   
-             
+            power(-2, 4)
+                
     def test_power_with_negative_base_and_even_exponent(self):
         with self.assertRaises(ValueError):
             power(-3, 2)
+
+print("something t43")
 if __name__ == '__main__':
     unittest.main()
