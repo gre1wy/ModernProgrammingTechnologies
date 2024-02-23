@@ -1,13 +1,11 @@
 #З використанням рекурсії розв’язати наступні задачі.
-#1. Піднести до додатного цілого степеня дійсне ненульове число.
+#1. Піднести до додатного цілого степеня ціле ненульове число.
 def power(x, n):
 
-    if x <= 0:
-        raise ValueError("x should be positive")
-    if not isinstance(x, int):
-        raise ValueError("x should be integer")
-    if n < 0:
-        raise ValueError("n should be non-negative")
+    if x <= 0 or not isinstance(x, int):
+        raise ValueError("x should be positive integer")
+    if n < 0 or not isinstance(n, int):
+        raise ValueError("n should be non-negative integer")
     
     # Базовий випадок: x^0 = 1
     if n == 0:
@@ -29,20 +27,21 @@ class TestPowerFunction(unittest.TestCase):
         self.assertEqual(power(7, 0), 1)
         self.assertEqual(power(1, 0), 1)
 
-    def test_power_with_non_positive_base(self):
-        with self.assertRaisesRegex(ValueError, "x should be positive"):
+    def test_power_with_not_positive_not_integer_base(self):
+        with self.assertRaisesRegex(ValueError, "x should be positive integer"):
             power(0, 3)
 
-        with self.assertRaisesRegex(ValueError, "x should be positive"):
+        with self.assertRaisesRegex(ValueError, "x should be positive integer"):
             power(-2, 4)
-            
-    def test_power_with_non_integer_base(self):
-        with self.assertRaisesRegex(ValueError, "x should be integer"):
-            power(1.5, 3)
+        
+        with self.assertRaisesRegex(ValueError, "x should be positive integer"):
+            power(1.5, 4)
 
-    def test_power_with_negative_exponent(self):
-        with self.assertRaisesRegex(ValueError, "n should be non-negative"):
-            power(2, -3)
+    def test_power_with_not_integer_or_negative_base(self):
+        with self.assertRaisesRegex(ValueError, "n should be non-negative integer"):
+            power(1, -3)
+        with self.assertRaisesRegex(ValueError, "n should be non-negative integer"):
+            power(2, 1.5)
 
 if __name__ == '__main__':
     unittest.main()
