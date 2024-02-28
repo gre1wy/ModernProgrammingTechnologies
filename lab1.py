@@ -9,14 +9,13 @@ def power(x, n):
         raise ValueError("x should be positive integer")
     if n < 0 or not isinstance(n, int):
         raise ValueError("n should be non-negative integer")
-    
+
     # Базовий випадок: x^0 = 1
     if n == 0:
         return 1
     # Рекурсивний випадок: x^n = x * x^(n-1)
     else:
         return x * power(x, n-1)
-
 
 
 class TestPowerFunction(unittest.TestCase):
@@ -54,4 +53,4 @@ class TestPowerFunction(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-   
+
