@@ -1,3 +1,6 @@
+import unittest
+
+
 # З використанням рекурсії розв’язати наступні задачі.
 # 1. Піднести до додатного цілого степеня ціле ненульове число.
 def power(x, n):
@@ -14,7 +17,7 @@ def power(x, n):
     else:
         return x * power(x, n-1)
 
-import unittest
+
 
 class TestPowerFunction(unittest.TestCase):
     def test_power_with_positive_exponent(self):
@@ -28,21 +31,27 @@ class TestPowerFunction(unittest.TestCase):
         self.assertEqual(power(1, 0), 1)
 
     def test_power_with_not_positive_not_integer_base(self):
-        with self.assertRaisesRegex(ValueError, "x should be positive integer"):
+        with self.assertRaisesRegex(ValueError, 
+                                    "x should be positive integer"):
             power(0, 3)
 
-        with self.assertRaisesRegex(ValueError, "x should be positive integer"):
+        with self.assertRaisesRegex(ValueError, 
+                                    "x should be positive integer"):
             power(-2, 4)
         
-        with self.assertRaisesRegex(ValueError, "x should be positive integer"):
+        with self.assertRaisesRegex(ValueError, 
+                                    "x should be positive integer"):
             power(1.5, 4)
 
     def test_power_with_not_integer_or_negative_base(self):
-        with self.assertRaisesRegex(ValueError, "n should be non-negative integer"):
+        with self.assertRaisesRegex(ValueError, 
+                                    "n should be non-negative integer"):
             power(1, -3)
-        with self.assertRaisesRegex(ValueError, "n should be non-negative integer"):
+        with self.assertRaisesRegex(ValueError, 
+                                    "n should be non-negative integer"):
             power(2, 1.5)
+
 
 if __name__ == '__main__':
     unittest.main()
-    
+   
