@@ -33,15 +33,12 @@ class TestPowerFunction(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 
                                     "x should be positive integer"):
             power(0, 3)
-
         with self.assertRaisesRegex(ValueError, 
                                     "x should be positive integer"):
             power(-2, 4)
-        
         with self.assertRaisesRegex(ValueError, 
                                     "x should be positive integer"):
             power(1.5, 4)
-
     def test_power_with_not_integer_or_negative_base(self):
         with self.assertRaisesRegex(ValueError, 
                                     "n should be non-negative integer"):
