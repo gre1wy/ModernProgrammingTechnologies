@@ -28,4 +28,6 @@ jobs:
 
     - name: Run linting
       run: |
-        flake8 lab1.py --exit-zero
+        flake8 lab1.py --exit-zero > lint_results.txt
+        cat lint_results.txt
+        echo "::set-output name=lint_results::$(cat lint_results.txt)"
