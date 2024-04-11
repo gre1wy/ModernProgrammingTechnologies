@@ -24,7 +24,7 @@ jobs:
         pip install flake8
 
     - name: Run tests
-      run: pytest lab1.py 
+      run: pytest Lab2/lab2.py 
 
     - name: Run linting
       run: |
