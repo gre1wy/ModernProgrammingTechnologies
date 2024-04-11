@@ -18,8 +18,7 @@ def data_manip(data: str):
         else:
             converted_numbers.append(float(num))
 
-    sorted_numbers = bubble_sort(converted_numbers)
-    return sorted_numbers
+    return converted_numbers
 
 
 def main(data_from_test=None):
