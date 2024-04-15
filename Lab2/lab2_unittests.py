@@ -54,7 +54,6 @@ class TestBubbleSort(unittest.TestCase):
                 exit_code, sorted_numbers = l.main()
                 self.assertEqual(exit_code, 0)
                 self.assertEqual(sorted_numbers, expected_result)
-    
 
 if __name__ == '__main__':
     unittest.main()
