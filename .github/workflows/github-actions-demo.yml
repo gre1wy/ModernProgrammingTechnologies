@@ -24,7 +24,7 @@ jobs:
         pip install flake8
 
     - name: Run Python tests
-      run: pytest */*_test.py
+      run: pytest */*.py
 
     - name: Run Go tests
-      run: go test ./*/*_test.go
+      run: go test */*.go
