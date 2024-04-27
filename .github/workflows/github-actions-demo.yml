@@ -27,4 +27,7 @@ jobs:
       run: pytest */*.py
 
     - name: Run Go tests
-      run: go test */*.go
+      run: |
+        find . -name '*_test.go' -exec go test {} \;
+
+
