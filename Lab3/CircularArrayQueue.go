@@ -100,3 +100,23 @@ func (q *CircularArrayQueue) Display() {
 	}
 	fmt.Println()
 }
+func (q *CircularArrayQueue) DisplayFull() {
+	if q.IsEmpty() {
+		fmt.Println("Queue is empty")
+		return
+	}
+	fmt.Println("Current Queue:")
+	for i := 0; i < q.capacity; i++ {
+		if i == q.head && i == q.tail {
+			fmt.Printf("HT(%v) ", q.items[i])
+		} else if i == q.tail {
+			fmt.Printf("T(%v) ", q.items[i])
+		} else if i == q.head {
+			fmt.Printf("H(%v) ", q.items[i])
+		} else {
+			fmt.Printf("%v ", q.items[i])
+		}
+
+	}
+	fmt.Println()
+}

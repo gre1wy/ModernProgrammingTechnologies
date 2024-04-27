@@ -96,5 +96,14 @@ func userInteraction() {
 }
 
 func main() {
-	userInteraction()
+	// userInteraction()
+	q, _ := NewCircularArrayQueue(3)
+	q.Enqueue(1)
+	q.Enqueue(2)
+	q.Enqueue(3)
+	q.DisplayFull()
+	q.Dequeue()
+	q.DisplayFull()
+	q.Dequeue()
+	q.DisplayFull()
 }
