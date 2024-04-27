@@ -24,11 +24,7 @@ jobs:
         pip install flake8
 
     - name: Run Python tests
-      run: pytest your_folder_with_tests/*.py
+      run: pytest */*_test.py
 
     - name: Run Go tests
-      run: go test ./your_folder_with_tests/...
-
-    - name: Run linting
-      run: |
-        flake8 . --exit-zero
+      run: go test ./*/*_test.go
