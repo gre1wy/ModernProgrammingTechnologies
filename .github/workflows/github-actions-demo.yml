@@ -23,10 +23,12 @@ jobs:
         pip install pytest
         pip install flake8
 
-    - name: Run tests
-      run: pytest Lab2/lab2_unittests.py 
+    - name: Run Python tests
+      run: pytest your_folder_with_tests/*.py
+
+    - name: Run Go tests
+      run: go test ./your_folder_with_tests/...
 
     - name: Run linting
       run: |
-        flake8 lab1.py --exit-zero
-       
+        flake8 . --exit-zero
