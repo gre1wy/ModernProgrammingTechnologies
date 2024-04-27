@@ -28,6 +28,9 @@ jobs:
 
     - name: Run Go tests
       run: |
-        find . -name '*_test.go' -exec go test {} \;
+        for d in */; do
+          go test ./$d*_test.go
+        done
+
 
 
