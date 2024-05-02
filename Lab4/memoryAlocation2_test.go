@@ -12,9 +12,8 @@ func TestCreatingArray1MBOnStack(t *testing.T) {
 	runtime.ReadMemStats(&memStatsBefore)
 
 	var array [1 << 20]byte
-	for i := range array {
-		array[i] = 0
-	}
+
+	array[0] = 0
 
 	runtime.ReadMemStats(&memStatsAfter)
 	allocatedMemoryDiff := int(memStatsAfter.TotalAlloc - memStatsBefore.TotalAlloc)
@@ -32,9 +31,7 @@ func TestCreatingArray1MBOnHeap(t *testing.T) {
 	runtime.ReadMemStats(&memStatsBefore)
 
 	array := make([]byte, 1<<20)
-	for i := range array {
-		array[i] = 0
-	}
+	array[0] = 0
 
 	runtime.ReadMemStats(&memStatsAfter)
 	allocatedMemoryDiff := int(memStatsAfter.TotalAlloc - memStatsBefore.TotalAlloc)
