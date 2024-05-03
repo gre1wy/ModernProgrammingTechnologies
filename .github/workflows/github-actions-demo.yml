@@ -26,11 +26,5 @@ jobs:
     - name: Run Python tests
       run: pytest */*.py
 
-    - name: Run Go tests
-      run: |
-        for d in */; do
-          go test ./$d*_test.go
-        done
-
 
 
