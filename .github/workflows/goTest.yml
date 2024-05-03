@@ -18,7 +18,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build Docker image
-      run: docker build -t go-tests ./lab4
+      run: docker build -t go-tests ./Lab4
 
     - name: Run tests in Docker container
       run: docker run go-tests
