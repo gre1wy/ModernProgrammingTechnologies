@@ -28,4 +28,4 @@ func heapIt() []int {
 	return append(slice, 42)
 }
 
-//42108364                26.46 ns/op           16 B/op          1 allocs/op <- heap
+//42108364                26.46 ns/op           16 B/op          1 allocs/op <- heapм4е
