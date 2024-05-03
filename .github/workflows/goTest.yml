@@ -1,4 +1,4 @@
-name: Go Test
+name: Go Test in Docker
 
 on:
   push:
@@ -10,17 +10,15 @@ on:
 
 jobs:
   test:
-    name: Run Go tests
+    name: Run Go tests in Docker
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      
-    - name: Set up Go
-      uses: actions/setup-go@v2
-      with:
-        go-version: 1.22.2
 
-    - name: Run tests
-      run: go test -v ./lab4/...
+    - name: Build Docker image
+      run: docker build -t go-tests .
+
+    - name: Run tests in Docker container
+      run: docker run go-tests
