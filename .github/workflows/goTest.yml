@@ -1,0 +1,24 @@
+name: Go Test in Docker
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Run Go tests in Docker
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build Docker image
+      run: docker build -t go-tests .
+
+    - name: Run tests in Docker container
+      run: docker run go-tests
