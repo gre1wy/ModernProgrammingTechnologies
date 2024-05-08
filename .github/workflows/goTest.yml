@@ -27,4 +27,4 @@ jobs:
     - name: Push image to Docker Hub
       run: docker push gre1wy/go-tests
     - name: Run tests in Docker container
-      run: docker run go-tests
+      run: docker run gre1wy/go-tests
