@@ -4,5 +4,5 @@
 - [x] Lab2: I/O, CLI (lang: Python)
 - [x] Lab3: OOP, SOLID (lang: GO)
 - [x] Lab4: Memory, GC (lang: GO)
-- [ ] Lab5: Docker,CI/CD
+- [x] Lab5: Docker,CI/CD
 - [ ] Lab6: Terraform,AWS,Localstack
