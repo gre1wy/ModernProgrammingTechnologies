@@ -1,3 +1,4 @@
 .vscode
 *.docx
 __pycache__
+*.terraform*
